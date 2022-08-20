@@ -5,8 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -30,6 +29,12 @@ public class HomeController implements Initializable {
     private Button btnSettings;
     @FXML
     private Pane rightPane;
+    @FXML
+    private CheckBox checkData3;
+    @FXML
+    private TextField textData1;
+    @FXML
+    private PasswordField textData2;
 
     @FXML
     void handleButtonClick(ActionEvent event) throws IOException {
@@ -59,6 +64,17 @@ public class HomeController implements Initializable {
         Pane dataPane = FXMLLoader.load(getClass().getResource("charts-pane.fxml"));
         rightPane.getChildren().clear();
         rightPane.getChildren().add(dataPane);
+    }
+
+    public void handleDataSubmit() {
+        String data1 = textData1.getText();
+        String data2 = textData2.getText();
+        Boolean check = checkData3.isSelected();
+        if (check) {
+            System.out.println(data1 + data2);
+        } else {
+            System.out.println("Not selected");
+        }
     }
 
     @Override
