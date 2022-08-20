@@ -1,0 +1,13 @@
+#navButton {
+    -fx-text-fill: #fff;
+    -fx-text-alignment: left;
+    -fx-background-color: #004c75;
+}
+
+#navButton:hover {
+    -fx-background-color: #003856;
+}
+
+#navButton:pressed {
+    -fx-background-color: #002438;
+}

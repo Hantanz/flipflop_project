@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.flipflop.flipflop.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox id="navButton" maxWidth="300.0" minWidth="150.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #004c75#004c75;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox>
+               <VBox.margin>
+                  <Insets bottom="3.0" top="3.0" />
+               </VBox.margin>
+               <children>
+                  <Pane prefHeight="146.0" prefWidth="300.0">
+                     <children>
+                        <Label layoutX="81.0" layoutY="55.0" text="App Name" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <VBox />
+            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Data Entry" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdoal-addchart" iconSize="20" textAlignment="RIGHT" />
+               </graphic>
+            </Button>
+            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Charts" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdal-equalizer" iconSize="20" textAlignment="RIGHT" />
+               </graphic>
+            </Button>
+            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Insights" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdal-add_task" iconSize="20" textAlignment="RIGHT" />
+               </graphic>
+            </Button>
+            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Settings" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdmz-settings" iconSize="20" textAlignment="RIGHT" />
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <TabPane blendMode="ADD" layoutX="299.0" layoutY="31.0" prefHeight="800.0" prefWidth="901.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="193.0" prefWidth="232.0" style="-fx-background-color: blue;" />
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
