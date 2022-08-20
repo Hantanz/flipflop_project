@@ -3,17 +3,17 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flipflop.flipflop.HomeController">
    <children>
-      <VBox id="navButton" maxWidth="300.0" minWidth="150.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #004c75#004c75;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox id="navButton" maxWidth="300.0" minWidth="150.0" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #004c75#004c75;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox>
                <VBox.margin>
@@ -27,12 +27,17 @@
                               <Font size="33.0" />
                            </font>
                         </Label>
+                        <Label layoutX="135.0" layoutY="99.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>
             </VBox>
             <VBox />
-            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Data Entry" textFill="WHITE">
+            <Button id="navButton" fx:id="btnDataEntry" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Data Entry" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
@@ -43,7 +48,7 @@
                   <FontIcon iconColor="WHITE" iconLiteral="mdoal-addchart" iconSize="20" textAlignment="RIGHT" />
                </graphic>
             </Button>
-            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Charts" textFill="WHITE">
+            <Button id="navButton" fx:id="btnCharts" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Charts" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -51,7 +56,7 @@
                   <FontIcon iconColor="WHITE" iconLiteral="mdal-equalizer" iconSize="20" textAlignment="RIGHT" />
                </graphic>
             </Button>
-            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Insights" textFill="WHITE">
+            <Button id="navButton" fx:id="btnInsights" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Insights" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -59,7 +64,7 @@
                   <FontIcon iconColor="WHITE" iconLiteral="mdal-add_task" iconSize="20" textAlignment="RIGHT" />
                </graphic>
             </Button>
-            <Button id="navButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Settings" textFill="WHITE">
+            <Button id="navButton" fx:id="btnSettings" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="300.0" stylesheets="@styles.css" text="   Settings" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -72,19 +77,29 @@
             </Button>
          </children>
       </VBox>
-      <TabPane blendMode="ADD" layoutX="299.0" layoutY="31.0" prefHeight="800.0" prefWidth="901.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab text="Untitled Tab 1">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="193.0" prefWidth="232.0" style="-fx-background-color: blue;" />
-            </content>
-          </Tab>
-          <Tab text="Untitled Tab 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+      <Pane fx:id="rightPane2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Entry" textAlignment="RIGHT">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="rightPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <Pane prefHeight="85.0" prefWidth="900.0" style="-fx-background-color: #004c75#004c75;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <Text fill="WHITE" layoutX="744.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Entry" textAlignment="RIGHT">
+                  <font>
+                     <Font size="32.0" />
+                  </font>
+               </Text>
+            </children>
+         </Pane>
+      </AnchorPane>
    </children>
 </AnchorPane>
