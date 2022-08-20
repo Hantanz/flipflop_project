@@ -11,10 +11,13 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-import org.sqlite.JDBC.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -34,6 +37,8 @@ public class HomeController implements Initializable {
     private TextField textData1;
     @FXML
     private PasswordField textData2;
+
+    private static Connection database;
 
     @FXML
     void handleButtonClick(ActionEvent event) throws IOException {
@@ -70,9 +75,24 @@ public class HomeController implements Initializable {
         String data2 = textData2.getText();
         Boolean check = checkData3.isSelected();
         if (check) {
-            System.out.println(data1 + data2);
+            System.out.println(data1 + " " + data2);
         } else {
             System.out.println("Not selected");
+        }
+
+        try {
+            System.out.println("Query db!");
+            String query = "select * from maindata;";
+            Statement statement = database.createStatement();
+            ResultSet queryOutput = statement.executeQuery(query);
+            System.out.println("Result retrived");
+            while (queryOutput.next()) {
+                String dbData1 = queryOutput.getString("data1");
+                String dbData2 = queryOutput.getString("data2");
+                System.out.println(dbData1 + " " + dbData2);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 

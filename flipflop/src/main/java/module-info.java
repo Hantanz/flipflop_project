@@ -16,6 +16,7 @@ module com.flipflop.flipflop {
     // add icon pack modules
     requires org.kordamp.ikonli.material2;
     requires org.xerial.sqlitejdbc;
+    requires java.sql;
 
     opens com.flipflop.flipflop to javafx.fxml;
     exports com.flipflop.flipflop;
