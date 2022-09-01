@@ -1,5 +1,6 @@
 <img src="Caliber Logo.png" width=300>
 
+-----
 ##Developers
 * Dhushintha Ramalingam
 * Thanujan Tharmapalan
