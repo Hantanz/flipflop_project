@@ -1,4 +1,4 @@
-# Index
+<img src="Caliber Logo.png" width=300>
 
 ##Developers
 * Dhushintha Ramalingam
@@ -12,6 +12,9 @@ This project is to build a desktop application to acquire industrial production 
 
 
 ##Solution
+
+##Software Architecture
+<img src="Software Arch.png" >
 
 ##Technologies
 * Java
